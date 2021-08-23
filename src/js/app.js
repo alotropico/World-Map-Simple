@@ -17,18 +17,18 @@ const snowColor = offColor
 const colors = new rainbow()
 colors.setNumberRange(0, countriesWeight.length-1).setSpectrum(strongColor, lightColor)
 
-// const mapProjection = 'geoOrthographic'
-// const mapRotation = [50, -20, 0]
+const mapProjection = 'geoOrthographic'
+const mapRotation = [50, -20, 0]
 
-const mapProjection = 'geoNaturalEarth1'
-const mapRotation = [0, 0, 0]
+// const mapProjection = 'geoNaturalEarth1'
+// const mapRotation = [0, 0, 0]
 
 async function init() {
 
 	renderPalette()
 	
-	const world = await fetcher('https://www.alotropico.com/projects/bairesdev/world/data/world-atlas-110m.json')
-	const countries = await fetcher('https://www.alotropico.com/projects/bairesdev/world/data/ne_10m_admin_0_countries_simp.json')
+	const world = await fetcher('../../data/world-atlas-110m.json')
+	const countries = await fetcher('../../data/ne_10m_admin_0_countries_simp.json')
 
 	const geoLayers = dataToLayers(
 		topojson.feature(world, world.objects.land).features,
