@@ -1,9 +1,5 @@
 ## World Map
 
-By @alotropico
-
----
-
 Open console in the project's folder and type:
 ```bash
 npm install
